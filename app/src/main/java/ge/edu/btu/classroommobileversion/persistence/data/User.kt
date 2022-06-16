@@ -1,11 +1,11 @@
-package ge.edu.btu.classroommobileversion.persistence
+package ge.edu.btu.classroommobileversion.persistence.data
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.*
 
-@Entity
+@Entity("Users")
 data class User(
     @PrimaryKey(autoGenerate = true) val userId: Int,
     @ColumnInfo(name = "Name") val name: String,

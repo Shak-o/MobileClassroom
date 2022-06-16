@@ -1,11 +1,11 @@
-package ge.edu.btu.classroommobileversion.persistence
+package ge.edu.btu.classroommobileversion.persistence.data
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.*
 
-@Entity
+@Entity("Groups")
 data class Group (
     @PrimaryKey(autoGenerate = true) val groupId: Int,
     @ColumnInfo(name = "LecturerId") val lectureId: Int,

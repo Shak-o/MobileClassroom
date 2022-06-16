@@ -1,10 +1,10 @@
-package ge.edu.btu.classroommobileversion.persistence
+package ge.edu.btu.classroommobileversion.persistence.data
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity
+@Entity("Subjects")
 data class Subject(
     @PrimaryKey(autoGenerate = true) val subjectId: Int,
     @ColumnInfo(name = "GroupId") val groupId: Int,

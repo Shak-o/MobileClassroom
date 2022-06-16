@@ -1,4 +1,4 @@
-package ge.edu.btu.classroommobileversion.persistence
+package ge.edu.btu.classroommobileversion.persistence.data
 
 import androidx.room.*
 
