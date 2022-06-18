@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.*
 
-@Entity("Groups")
+@Entity(tableName = "Groups")
 data class Group (
     @PrimaryKey(autoGenerate = true) val groupId: Int,
     @ColumnInfo(name = "LecturerId") val lectureId: Int,
@@ -13,5 +13,6 @@ data class Group (
     @ColumnInfo(name = "GroupNumber") val groupName: Float,
     @ColumnInfo(name = "RoomNumber") val roomNumber: Float,
     @ColumnInfo(name = "Capacity") val capacity: Int,
-    @ColumnInfo(name = "Times") val times: Date,
+    @ColumnInfo(name = "StartTime") val startTime: String,
+    @ColumnInfo(name = "EndTime") val endTime: String,
 )

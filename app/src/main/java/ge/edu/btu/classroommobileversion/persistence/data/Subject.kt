@@ -4,7 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity("Subjects")
+@Entity(tableName = "Subjects")
 data class Subject(
     @PrimaryKey(autoGenerate = true) val subjectId: Int,
     @ColumnInfo(name = "GroupId") val groupId: Int,

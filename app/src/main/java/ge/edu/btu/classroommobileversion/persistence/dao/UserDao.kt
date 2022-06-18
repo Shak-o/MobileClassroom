@@ -10,7 +10,7 @@ import ge.edu.btu.classroommobileversion.persistence.data.User
 @Dao
 interface UserDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun addUser(vararg user: User);
+    fun addUser(vararg user: User);
 
     @Query("SELECT * FROM Users")
     fun getUsers(): LiveData<List<User>>
