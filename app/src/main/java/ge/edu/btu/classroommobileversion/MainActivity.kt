@@ -22,9 +22,4 @@ class MainActivity : AppCompatActivity() {
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
 
-    fun initDatabase() {
-        //TestDataInsert
-    }
-
-    // hey
 }
