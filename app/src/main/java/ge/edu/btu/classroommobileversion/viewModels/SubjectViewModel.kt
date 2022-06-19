@@ -15,7 +15,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class SubjectViewModel(application: Application): AndroidViewModel(application) {
-    private val readAllData: LiveData<List<Subject>>
+    val readAllData: LiveData<List<Subject>>
     private val repo: SubjectRepository
     init {
         val subjectDao = AppDatabase.getDb(application).subjectDao()
