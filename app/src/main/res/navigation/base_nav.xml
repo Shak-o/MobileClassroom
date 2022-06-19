@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_loginFragment_to_registrationFragment"
             app:destination="@id/registrationFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_subjectsFragment"
+            app:destination="@id/subjectsFragment" />
     </fragment>
     <fragment
         android:id="@+id/registrationFragment"
@@ -23,4 +26,9 @@
             android:id="@+id/action_registrationFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/subjectsFragment"
+        android:name="ge.edu.btu.classroommobileversion.SubjectsFragment"
+        android:label="fragment_subjects"
+        tools:layout="@layout/fragment_subjects" />
 </navigation>
