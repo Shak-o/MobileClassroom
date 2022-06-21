@@ -12,7 +12,7 @@ import ge.edu.btu.classroommobileversion.persistence.data.Group
 import ge.edu.btu.classroommobileversion.persistence.data.Subject
 import ge.edu.btu.classroommobileversion.persistence.data.User
 
-@Database(entities = [User :: class, Group :: class, Subject :: class], version = 2 )
+@Database(entities = [User :: class, Group :: class, Subject :: class], version = 3)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun userDao(): UserDao
@@ -34,7 +34,7 @@ abstract class AppDatabase : RoomDatabase() {
                     context.applicationContext,
                     AppDatabase::class.java,
                     "Classroom"
-                ).build()
+                ).fallbackToDestructiveMigration().build()
                 INSTANCE = instance
                 return instance
             }

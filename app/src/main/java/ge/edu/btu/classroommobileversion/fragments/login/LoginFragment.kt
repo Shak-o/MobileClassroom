@@ -12,13 +12,15 @@ import androidx.navigation.fragment.findNavController
 import ge.edu.btu.classroommobileversion.R
 import ge.edu.btu.classroommobileversion.databinding.FragmentLoginBinding
 import ge.edu.btu.classroommobileversion.persistence.data.User
+import ge.edu.btu.classroommobileversion.utils.NotificationUtil
 import ge.edu.btu.classroommobileversion.viewModels.UserViewModel
 
 class LoginFragment : Fragment() {
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
     private lateinit var userViewModel : UserViewModel
-
+    private val MAXLOGINS = 3
+    private var currentLogins = 0
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -50,11 +52,16 @@ class LoginFragment : Fragment() {
         if (user == null)
         {
             Toast.makeText(requireContext(), "Authentication failed", Toast.LENGTH_LONG).show()
+            currentLogins += 1
+            if (currentLogins > MAXLOGINS)
+            {
+                NotificationUtil.showNotification(requireContext(),"Your account has been blocked")
+            }
         }
         else {
             findNavController().navigate(R.id.action_loginFragment_to_subjectsFragment)
         }
-        findNavController().navigate(R.id.action_loginFragment_to_subjectsFragment)
+        //findNavController().navigate(R.id.action_loginFragment_to_subjectsFragment)
     }
 
     override fun onDestroy() {
