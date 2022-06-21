@@ -61,7 +61,7 @@ class LoginFragment : Fragment() {
         else {
             findNavController().navigate(R.id.action_loginFragment_to_subjectsFragment)
         }
-        //findNavController().navigate(R.id.action_loginFragment_to_subjectsFragment)
+        findNavController().navigate(R.id.action_loginFragment_to_subjectsFragment)
     }
 
     override fun onDestroy() {

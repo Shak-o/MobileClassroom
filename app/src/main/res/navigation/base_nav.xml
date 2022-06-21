@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="ge.edu.btu.classroommobileversion.fragments.login.LoginFragment"
-        android:label="fragment_login"
+        android:label="Log In"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_registrationFragment"
@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/registrationFragment"
         android:name="ge.edu.btu.classroommobileversion.fragments.login.RegistrationFragment"
-        android:label="fragment_registration"
+        android:label="Register"
         tools:layout="@layout/fragment_registration" >
         <action
             android:id="@+id/action_registrationFragment_to_loginFragment"
@@ -29,6 +29,11 @@
     <fragment
         android:id="@+id/subjectsFragment"
         android:name="ge.edu.btu.classroommobileversion.fragments.subjects.SubjectsFragment"
-        android:label="fragment_subjects"
+        android:label="Subjects"
         tools:layout="@layout/fragment_subjects" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="ge.edu.btu.classroommobileversion.fragments.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>
