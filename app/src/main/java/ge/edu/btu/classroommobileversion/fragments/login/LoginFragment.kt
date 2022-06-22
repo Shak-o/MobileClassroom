@@ -55,7 +55,7 @@ class LoginFragment : Fragment() {
             currentLogins += 1
             if (currentLogins > MAXLOGINS)
             {
-                NotificationUtil.showNotification(requireContext(),"Your account has been blocked")
+                NotificationUtil.showNotification(requireContext(),"Your account has been blocked", R.drawable.ic_baseline_app_blocking_24)
             }
         }
         else {

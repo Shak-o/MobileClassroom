@@ -4,7 +4,9 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.BroadcastReceiver
 import android.content.Context
+import android.content.Intent
 import android.content.IntentFilter
+import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
@@ -33,11 +35,15 @@ class MainActivity : AppCompatActivity() {
         bottomNavigationView.setupWithNavController(navController)
         subjectViewModel = ViewModelProvider(this).get(SubjectViewModel :: class.java)
 
-        val subject = Subject(0,  "Test Group 2", "Lorem ipsum dolor sit amet", 5, 100)
+//        val subject = Subject(0,  "Test Group 2", "Lorem ipsum dolor sit amet", 5, 100)
+//
+//        subjectViewModel.addSubject(subject)
+        val br: BroadcastReceiver = MyBroadcastReceiver()
+        val filter = IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION).apply {
+            addAction(Intent.ACTION_MANAGE_NETWORK_USAGE)
+        }
+        registerReceiver(br, filter)
 
-        subjectViewModel.addSubject(subject)
-//        val br: BroadcastReceiver = MyBroadcastReceiver()
-//        registerReceiver(br, IntentFilter())
         val importance = NotificationManager.IMPORTANCE_DEFAULT
         val channel =
             NotificationChannel(NotificationUtil.CHANNEL_ID, "MINE", importance).apply {
