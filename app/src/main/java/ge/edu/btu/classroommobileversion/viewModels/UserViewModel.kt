@@ -14,13 +14,17 @@ import kotlinx.coroutines.launch
 class UserViewModel(application: Application): AndroidViewModel(application) {
     private val readAllData: LiveData<List<User>>
     private val repo: UserRepository
-
+    val userLiveData = MutableLiveData<User>()
     init {
         val userDao = AppDatabase.getDb(application).userDao()
         repo = UserRepository(userDao)
         readAllData = repo.readAllData
     }
 
+//    fun getUser(name: String, password:String){
+//        val disposableUser = repo.getOneUser(name, password).subscribe({
+//                userLivedata.postValue(it)
+//            })
     fun getUserByPassAndName(userName :String, password: String) : LiveData<User>? {
         var result : LiveData<User>
         viewModelScope.launch ( Dispatchers.IO) {

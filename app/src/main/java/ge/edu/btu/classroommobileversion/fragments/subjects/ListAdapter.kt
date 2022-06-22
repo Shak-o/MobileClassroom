@@ -30,7 +30,7 @@ class ListAdapter : RecyclerView.Adapter<ListAdapter.MyViewHolder>() {
 
             name.text = subject.name
             description.text = subject.description
-            max.text = subject.barrier.toString()
+            max.text = subject.subjectId.toString()
             homeworks.text = subject.homeworkAmount.toString()
             this.subject = subject
         }

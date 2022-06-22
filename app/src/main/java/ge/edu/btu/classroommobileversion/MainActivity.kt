@@ -15,13 +15,19 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import ge.edu.btu.classroommobileversion.persistence.data.Group
 import ge.edu.btu.classroommobileversion.persistence.data.Subject
 import ge.edu.btu.classroommobileversion.utils.MyBroadcastReceiver
 import ge.edu.btu.classroommobileversion.utils.NotificationUtil
+import ge.edu.btu.classroommobileversion.viewModels.GroupViewModel
 import ge.edu.btu.classroommobileversion.viewModels.SubjectViewModel
+import java.sql.Date
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class MainActivity : AppCompatActivity() {
     private lateinit var subjectViewModel: SubjectViewModel
+    private lateinit var groupViewModel : GroupViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,10 +40,18 @@ class MainActivity : AppCompatActivity() {
         setupActionBarWithNavController(navController)
         bottomNavigationView.setupWithNavController(navController)
         subjectViewModel = ViewModelProvider(this).get(SubjectViewModel :: class.java)
+        groupViewModel = ViewModelProvider(this).get(GroupViewModel :: class.java)
 
 //        val subject = Subject(0,  "Test Group 2", "Lorem ipsum dolor sit amet", 5, 100)
 //
 //        subjectViewModel.addSubject(subject)
+        val current = LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")
+        val formatted = current.format(formatter)
+
+        val group = Group(0, 2, 3, 124F, 1F, 3, formatted, formatted)
+        groupViewModel.addGroup(group)
+
         val br: BroadcastReceiver = MyBroadcastReceiver()
         val filter = IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION).apply {
             addAction(Intent.ACTION_MANAGE_NETWORK_USAGE)

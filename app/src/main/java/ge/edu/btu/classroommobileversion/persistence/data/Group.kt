@@ -10,7 +10,7 @@ data class Group (
     @PrimaryKey(autoGenerate = true) val groupId: Int,
     @ColumnInfo(name = "LecturerId") val lectureId: Int,
     @ColumnInfo(name = "ParentSubjectId") val parentSubjectId: Int,
-    @ColumnInfo(name = "GroupNumber") val groupName: Float,
+    @ColumnInfo(name = "GroupNumber") val groupNumber: Float,
     @ColumnInfo(name = "RoomNumber") val roomNumber: Float,
     @ColumnInfo(name = "Capacity") val capacity: Int,
     @ColumnInfo(name = "StartTime") val startTime: String,

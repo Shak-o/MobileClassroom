@@ -8,7 +8,7 @@ data class SubjectWithGroup(
     @Embedded val subject: Subject,
     @Relation(
         parentColumn = "subjectId",
-        entityColumn = "parentSubjectId"
+        entityColumn = "ParentSubjectId"
     )
     val groups: List<Group>
 )

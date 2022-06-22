@@ -5,6 +5,7 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import ge.edu.btu.classroommobileversion.persistence.data.Group
+import ge.edu.btu.classroommobileversion.persistence.data.SubjectWithGroup
 import ge.edu.btu.classroommobileversion.persistence.data.User
 import ge.edu.btu.classroommobileversion.persistence.dbcontext.AppDatabase
 import ge.edu.btu.classroommobileversion.persistence.repositories.GroupRepository
@@ -19,6 +20,10 @@ class GroupViewModel(application: Application): AndroidViewModel(application) {
         val groupDao = AppDatabase.getDb(application).groupDao()
         repo = GroupRepository(groupDao)
         readAllData = repo.readAllData
+    }
+
+    fun getGroupsBySubject(subjectId : Int) : LiveData<List<SubjectWithGroup>> {
+        return repo.getGroupsBySubject(subjectId)
     }
 
     fun addGroup(group: Group) {
