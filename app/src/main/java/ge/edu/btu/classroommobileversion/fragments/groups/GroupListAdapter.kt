@@ -22,8 +22,8 @@ class GroupListAdapter : RecyclerView.Adapter<GroupListAdapter.GroupViewHolder>(
             val groupNumber : TextView = itemView.findViewById(R.id.groupNumber)
             val roomNumber : TextView = itemView.findViewById(R.id.roomNumber)
 
-            groupNumber.text = group.groupId.toString()
-            roomNumber.text = group.roomNumber.toString()
+            groupNumber.text = "Group: ${group.groupId}"
+            roomNumber.text = "Room: ${group.roomNumber}"
 
             this.group = group
         }

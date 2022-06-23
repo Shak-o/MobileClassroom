@@ -39,18 +39,19 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         setupActionBarWithNavController(navController)
         bottomNavigationView.setupWithNavController(navController)
-        subjectViewModel = ViewModelProvider(this).get(SubjectViewModel :: class.java)
-        groupViewModel = ViewModelProvider(this).get(GroupViewModel :: class.java)
 
-//        val subject = Subject(0,  "Test Group 2", "Lorem ipsum dolor sit amet", 5, 100)
+//        subjectViewModel = ViewModelProvider(this).get(SubjectViewModel :: class.java)
+//        groupViewModel = ViewModelProvider(this).get(GroupViewModel :: class.java)
 //
+//        val subject = Subject(0,  "Test Group 1", "Lorem ipsum dolor sit amet", 5, 100)
+
 //        subjectViewModel.addSubject(subject)
         val current = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")
         val formatted = current.format(formatter)
 
-        val group = Group(0, 2, 3, 124F, 1F, 3, formatted, formatted)
-        groupViewModel.addGroup(group)
+//        val group = Group(0, 2, 1, 124F, 1F, 3, formatted, formatted)
+//        groupViewModel.addGroup(group)
 
         val br: BroadcastReceiver = MyBroadcastReceiver()
         val filter = IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION).apply {

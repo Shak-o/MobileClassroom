@@ -36,6 +36,7 @@ class SubjectsFragment : Fragment() {
         subjectViewModel.readAllData.observe(viewLifecycleOwner, Observer {
             subjects -> adapter.setData(subjects)
         })
+
         return binding.root
     }
 
