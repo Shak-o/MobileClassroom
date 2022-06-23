@@ -34,10 +34,10 @@
   <p align="center">
     Mobile Version
     <br />
-    <a href="https://github.com/shalvaX/MobileClassroom"><strong>Explore the source code</strong></a>
+    <a href="https://github.com/shalvaX/MobileClassroom/tree/master/app/src/main"><strong>Explore the source code</strong></a>
     <br />
     <br />
-    <a href="https://github.com/shalvaX/MobileClassroom">Download apk</a>
+    <a href="https://github.com/shalvaX/MobileClassroom/tree/master/Apk"><strong>Download apk</strong></a>
   </p>
 </div>
 
@@ -57,15 +57,11 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
 
@@ -74,7 +70,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 We already have an amazing web version of BTU Classroom (which works without any delays) so now behold mobile version. 
 In this app you can observe available subjects, check groups and people in that group.
 
