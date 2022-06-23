@@ -79,7 +79,7 @@ In this app you can observe available subjects, check groups and people in that 
 
 ### Built With
 
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+Used languages and frameworks:
 
 * [Kotlin](https://kotlinlang.org/)
 
