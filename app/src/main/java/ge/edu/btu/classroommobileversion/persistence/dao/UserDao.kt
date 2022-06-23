@@ -15,7 +15,8 @@ interface UserDao {
     @Query("SELECT * FROM Users")
     fun getUsers(): LiveData<List<User>>
 
-    //საუკეთესო სელექტი არაა მარა ეგაა რაცაა.
-    @Query("SELECT * FROM Users WHERE UserName = :userName AND Password = :password ")
-    fun getOneUser(userName: String, password: String) : LiveData<User>
+    // საუკეთესო სელექტი არაა მარა ეგაა რაცაა.
+    // ერორს აბრუნებდა, როცა username და password გადაეცემოდა
+    @Query("SELECT * FROM Users WHERE UserName = :arg0 AND Password = :arg1 ")
+    fun getOneUser(arg0: String, arg1: String) : LiveData<User>
 }
