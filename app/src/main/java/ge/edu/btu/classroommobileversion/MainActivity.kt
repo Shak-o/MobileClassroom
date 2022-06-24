@@ -47,7 +47,6 @@ class MainActivity : AppCompatActivity() {
 
 //        subjectViewModel = ViewModelProvider(this).get(SubjectViewModel :: class.java)
 //        groupViewModel = ViewModelProvider(this).get(GroupViewModel :: class.java)
-//
 //        val subject = Subject(0,  "Test Group 1", "Lorem ipsum dolor sit amet", 5, 100)
 
 //        subjectViewModel.addSubject(subject)
