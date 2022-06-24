@@ -29,7 +29,7 @@ import java.time.format.DateTimeFormatter
 
 class MainActivity : AppCompatActivity() {
     private lateinit var subjectViewModel: SubjectViewModel
-    private lateinit var groupViewModel : GroupViewModel
+    private lateinit var groupViewModel: GroupViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,7 +37,8 @@ class MainActivity : AppCompatActivity() {
 //        supportActionBar?.hide()
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNav)
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         val navController = navHostFragment.navController
         setupActionBarWithNavController(navController)
 
@@ -45,17 +46,17 @@ class MainActivity : AppCompatActivity() {
 
         visibilityNavElements(bottomNavigationView, navController)
 
-//        subjectViewModel = ViewModelProvider(this).get(SubjectViewModel :: class.java)
-//        groupViewModel = ViewModelProvider(this).get(GroupViewModel :: class.java)
-//        val subject = Subject(0,  "Test Group 1", "Lorem ipsum dolor sit amet", 5, 100)
+        subjectViewModel = ViewModelProvider(this).get(SubjectViewModel :: class.java)
+        groupViewModel = ViewModelProvider(this).get(GroupViewModel :: class.java)
+        val subject = Subject(0,  "Test Group 1", "Lorem ipsum dolor sit amet", 5, 100)
 
-//        subjectViewModel.addSubject(subject)
+        subjectViewModel.addSubject(subject)
         val current = LocalDateTime.now()
         val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")
         val formatted = current.format(formatter)
 
-//        val group = Group(0, 2, 1, 124F, 1F, 3, formatted, formatted)
-//        groupViewModel.addGroup(group)
+        val group = Group(0, 2, 1, 124F, 1F, 3, formatted, formatted)
+        groupViewModel.addGroup(group)
 
         val br: BroadcastReceiver = MyBroadcastReceiver()
         val filter = IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION).apply {
@@ -73,18 +74,24 @@ class MainActivity : AppCompatActivity() {
         notificationManager.createNotificationChannel(channel)
     }
 
-    private fun visibilityNavElements(bottomNavigationView: BottomNavigationView, navController: NavController) {
+    private fun visibilityNavElements(
+        bottomNavigationView: BottomNavigationView,
+        navController: NavController
+    ) {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.loginFragment,
+                R.id.registrationFragment,
                 R.id.splashFragment,
                 R.id.viewPagerFragment -> bottomNavigationView.visibility = View.GONE
                 else -> bottomNavigationView.visibility = View.VISIBLE
             }
         }
     }
+
     override fun onSupportNavigateUp(): Boolean {
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         val navController = navHostFragment.navController
         return navController.navigateUp() || super.onSupportNavigateUp()
     }
