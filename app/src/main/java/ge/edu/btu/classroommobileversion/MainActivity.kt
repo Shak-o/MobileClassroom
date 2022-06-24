@@ -9,7 +9,9 @@ import android.content.IntentFilter
 import android.net.ConnectivityManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -32,13 +34,16 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
+//        supportActionBar?.hide()
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNav)
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         val navController = navHostFragment.navController
         setupActionBarWithNavController(navController)
+
         bottomNavigationView.setupWithNavController(navController)
+
+        visibilityNavElements(bottomNavigationView, navController)
 
 //        subjectViewModel = ViewModelProvider(this).get(SubjectViewModel :: class.java)
 //        groupViewModel = ViewModelProvider(this).get(GroupViewModel :: class.java)
@@ -69,6 +74,16 @@ class MainActivity : AppCompatActivity() {
         notificationManager.createNotificationChannel(channel)
     }
 
+    private fun visibilityNavElements(bottomNavigationView: BottomNavigationView, navController: NavController) {
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.loginFragment,
+                R.id.splashFragment,
+                R.id.viewPagerFragment -> bottomNavigationView.visibility = View.GONE
+                else -> bottomNavigationView.visibility = View.VISIBLE
+            }
+        }
+    }
     override fun onSupportNavigateUp(): Boolean {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         val navController = navHostFragment.navController

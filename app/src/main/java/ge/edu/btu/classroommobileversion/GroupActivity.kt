@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import ge.edu.btu.classroommobileversion.databinding.ActivityGroupBinding
 import ge.edu.btu.classroommobileversion.databinding.ActivityMainBinding
 import ge.edu.btu.classroommobileversion.databinding.FragmentLoginBinding

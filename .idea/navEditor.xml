@@ -124,6 +124,18 @@
                       </LayoutPositions>
                     </value>
                   </entry>
+                  <entry key="splashFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-457" />
+                            <option name="y" value="236" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
                   <entry key="subjectsFragment">
                     <value>
                       <LayoutPositions>
@@ -131,6 +143,18 @@
                           <Point>
                             <option name="x" value="500" />
                             <option name="y" value="368" />
+                          </Point>
+                        </option>
+                      </LayoutPositions>
+                    </value>
+                  </entry>
+                  <entry key="viewPagerFragment">
+                    <value>
+                      <LayoutPositions>
+                        <option name="myPosition">
+                          <Point>
+                            <option name="x" value="-214" />
+                            <option name="y" value="216" />
                           </Point>
                         </option>
                       </LayoutPositions>
